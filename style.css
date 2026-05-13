@@ -1,0 +1,87 @@
+:root {
+    --gold: #f39c12;
+    --dark-bg: #121212;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+/* Navbar Blur Effect */
+.navbar {
+    backdrop-filter: blur(15px);
+    background: rgba(18, 18, 18, 0.9) !important;
+}
+
+/* Hero Section with Parallax */
+.hero-section {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('https://images.unsplash.com/photo-1491336477066-31156b5e4f35?auto=format&fit=crop&w=1500');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Card Styling */
+.product-card {
+    border: none;
+    border-radius: 20px;
+    background: #fff;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+}
+
+.product-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.img-container {
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.product-card:hover img {
+    transform: scale(1.1);
+}
+
+/* WhatsApp Button */
+.btn-wa {
+    background-color: #25d366;
+    color: white;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-wa:hover {
+    background-color: #128c7e;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* About Section */
+.founder-img-box {
+    position: relative;
+    padding: 10px;
+}
+
+.founder-img-box::before {
+    content: "";
+    position: absolute;
+    top: -20px; left: -20px; width: 100px; height: 100px;
+    border-left: 5px solid var(--gold); border-top: 5px solid var(--gold);
+}
