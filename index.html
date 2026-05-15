@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mr. Eagle - Premium Ecommerce Store</title>
  <link rel="stylesheet" href="style.css">
- <link rel="stylesheet" href="script.js">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -119,7 +118,7 @@
           <div class="product-info">
             <h3>Luxury Sneakers</h3>
             <div class="price">$120</div>
-            <a href="https://wa.me/923239911255" class="order-btn">Order Now</a>
+            <a href="https://wa.me/9239911255" class="order-btn">Order Now</a>
           </div>
         </div>
 
@@ -400,6 +399,14 @@
     </div>
   </footer>
 
- 
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const menu = document.getElementById('menu');
+
+    hamburger.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
+  </script>
+
 </body>
 </html>
