@@ -1,558 +1,257 @@
-*{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      scroll-behavior:smooth;
-      font-family:'Poppins', sans-serif;
-    }
-
-    body{
-      background:#f5f7fb;
-      color:#111;
-      overflow-x:hidden;
-    }
-
-    img{
-      width:100%;
-      display:block;
-    }
-
-    a{
-      text-decoration:none;
-    }
-
-    ul{
-      list-style:none;
-    }
-
-    .container{
-      width:100%;
-      max-width:1300px;
-      margin:auto;
-      padding:0 20px;
-    }
-
-    .wrapper{
-      width:100%;
-    }
-
-    .contain1{
-      width:100%;
-    }
-
-    .contain2{
-      width:100%;
-    }
-
-    .contain3{
-      width:100%;
-    }
-
-    .header{
-      position:fixed;
-      top:0;
-      left:0;
-      width:100%;
-      background:rgba(255,255,255,0.95);
-      backdrop-filter:blur(10px);
-      z-index:999;
-      box-shadow:0 5px 20px rgba(0,0,0,0.08);
-    }
-
-    .navbar{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:18px 0;
-    }
-
-    .logo{
-      font-size:32px;
-      font-weight:800;
-      color:#000;
-    }
-
-    .logo span{
-      color:#ff6600;
-    }
-
-    .menu{
-      display:flex;
-      gap:30px;
-    }
-
-    .menu li a{
-      color:#111;
-      font-size:16px;
-      font-weight:500;
-      transition:0.4s;
-      position:relative;
-    }
-
-    .menu li a:hover{
-      color:#ff6600;
-    }
-
-    .menu li a::after{
-      content:'';
-      position:absolute;
-      left:0;
-      bottom:-5px;
-      width:0%;
-      height:2px;
-      background:#ff6600;
-      transition:0.4s;
-    }
-
-    .menu li a:hover::after{
-      width:100%;
-    }
-
-    .btn1{
-      background:#ff6600;
-      color:#fff;
-      padding:12px 25px;
-      border-radius:50px;
-      transition:0.4s;
-      font-weight:600;
-    }
-
-    .btn1:hover{
-      background:#111;
-      transform:translateY(-3px);
-    }
-
-    .hamburger{
-      display:none;
-      flex-direction:column;
-      gap:5px;
-      cursor:pointer;
-    }
-
-    .hamburger span{
-      width:28px;
-      height:3px;
-      background:#111;
-      border-radius:10px;
-      transition:0.4s;
-    }
-
-    .hero{
-      padding-top:140px;
-      padding-bottom:100px;
-      background:linear-gradient(to right,#000000,#1c1c1c);
-      color:#fff;
-    }
-
-    .hero-flex{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      align-items:center;
-      gap:50px;
-    }
-
-    .hero-text h4{
-      color:#ff6600;
-      font-size:22px;
-      margin-bottom:15px;
-    }
-
-    .hero-text h1{
-      font-size:68px;
-      line-height:1.1;
-      margin-bottom:20px;
-    }
-
-    .hero-text p{
-      color:#d0d0d0;
-      font-size:17px;
-      line-height:1.8;
-      margin-bottom:35px;
-    }
-
-    .hero-buttons{
-      display:flex;
-      gap:20px;
-      flex-wrap:wrap;
-    }
-
-    .btn2{
-      background:#fff;
-      color:#111;
-      padding:14px 28px;
-      border-radius:50px;
-      font-weight:600;
-      transition:0.4s;
-    }
-
-    .btn2:hover{
-      background:#ff6600;
-      color:#fff;
-      transform:translateY(-3px);
-    }
-
-    .hero-image img{
-      border-radius:30px;
-      box-shadow:0 20px 50px rgba(0,0,0,0.5);
-      animation:float 3s ease-in-out infinite;
-    }
-
-    @keyframes float{
-      0%{
-        transform:translateY(0px);
-      }
-      50%{
-        transform:translateY(-15px);
-      }
-      100%{
-        transform:translateY(0px);
-      }
-    }
-
-    .section-title{
-      text-align:center;
-      margin-bottom:60px;
-    }
-
-    .section-title h2{
-      font-size:45px;
-      margin-bottom:15px;
-    }
-
-    .section-title p{
-      color:#666;
-      max-width:700px;
-      margin:auto;
-      line-height:1.8;
-    }
-
-    .services{
-      padding:100px 0;
-    }
-
-    .service-grid{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:25px;
-    }
-
-    .service-box{
-      background:#fff;
-      padding:40px 25px;
-      border-radius:25px;
-      text-align:center;
-      transition:0.4s;
-      box-shadow:0 10px 30px rgba(0,0,0,0.07);
-    }
-
-    .service-box:hover{
-      transform:translateY(-10px);
-      background:#111;
-      color:#fff;
-    }
-
-    .service-box h3{
-      margin:20px 0 12px;
-      font-size:22px;
-    }
-
-    .products{
-      padding:100px 0;
-      background:#fff;
-    }
-
-    .product-grid{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:30px;
-    }
-
-    .product-card{
-      background:#f9f9f9;
-      border-radius:25px;
-      overflow:hidden;
-      transition:0.5s;
-      box-shadow:0 10px 25px rgba(0,0,0,0.08);
-    }
-
-    .product-card:hover{
-      transform:translateY(-10px);
-    }
-
-    .product-image{
-      overflow:hidden;
-    }
-
-    .product-image img{
-      height:280px;
-      object-fit:cover;
-      transition:0.5s;
-    }
-
-    .product-card:hover .product-image img{
-      transform:scale(1.1);
-    }
-
-    .product-info{
-      padding:25px;
-    }
-
-    .product-info h3{
-      font-size:22px;
-      margin-bottom:10px;
-    }
-
-    .price{
-      color:#ff6600;
-      font-size:22px;
-      font-weight:700;
-      margin-bottom:15px;
-    }
-
-    .order-btn{
-      display:inline-block;
-      background:#111;
-      color:#fff;
-      padding:12px 22px;
-      border-radius:50px;
-      transition:0.4s;
-      font-weight:600;
-    }
-
-    .order-btn:hover{
-      background:#ff6600;
-    }
-
-    .banner{
-      padding:100px 0;
-      background:linear-gradient(to right,#ff6600,#ff8c00);
-      color:#fff;
-      text-align:center;
-    }
-
-    .banner h2{
-      font-size:55px;
-      margin-bottom:20px;
-    }
-
-    .banner p{
-      max-width:700px;
-      margin:auto;
-      line-height:1.8;
-      margin-bottom:35px;
-    }
-
-    .about{
-      padding:100px 0;
-      background:#fff;
-    }
-
-    .about-flex{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:50px;
-      align-items:center;
-    }
-
-    .about-image img{
-      border-radius:30px;
-      box-shadow:0 10px 40px rgba(0,0,0,0.15);
-    }
-
-    .about-text h2{
-      font-size:50px;
-      margin-bottom:20px;
-    }
-
-    .about-text p{
-      color:#555;
-      line-height:1.9;
-      margin-bottom:20px;
-    }
-
-    .about-list{
-      margin-top:20px;
-    }
-
-    .about-list li{
-      margin-bottom:15px;
-      font-weight:500;
-    }
-
-    .stats{
-      padding:100px 0;
-      background:#111;
-      color:#fff;
-    }
-
-    .stats-grid{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:30px;
-      text-align:center;
-    }
-
-    .stats-box h2{
-      font-size:55px;
-      color:#ff6600;
-      margin-bottom:10px;
-    }
-
-    .reviews{
-      padding:100px 0;
-      background:#fff;
-    }
-
-    .review-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:30px;
-    }
-
-    .review-card{
-      background:#f8f8f8;
-      padding:35px;
-      border-radius:25px;
-      transition:0.4s;
-    }
-
-    .review-card:hover{
-      transform:translateY(-10px);
-      background:#111;
-      color:#fff;
-    }
-
-    .contact{
-      padding:100px 0;
-      background:#f5f7fb;
-    }
-
-    .contact-flex{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:50px;
-    }
-
-    .contact-info h2{
-      font-size:45px;
-      margin-bottom:20px;
-    }
-
-    .contact-info p{
-      line-height:1.8;
-      color:#555;
-      margin-bottom:20px;
-    }
-
-    .contact-box{
-      background:#fff;
-      padding:40px;
-      border-radius:25px;
-      box-shadow:0 10px 30px rgba(0,0,0,0.08);
-    }
-
-    .contact-box input,
-    .contact-box textarea{
-      width:100%;
-      padding:16px;
-      border:none;
-      background:#f3f3f3;
-      margin-bottom:20px;
-      border-radius:12px;
-      outline:none;
-      font-size:16px;
-    }
-
-    .contact-box button{
-      width:100%;
-      padding:16px;
-      border:none;
-      background:#ff6600;
-      color:#fff;
-      font-size:18px;
-      border-radius:50px;
-      cursor:pointer;
-      transition:0.4s;
-      font-weight:600;
-    }
-
-    .contact-box button:hover{
-      background:#111;
-    }
-
-    .footer{
-      background:#000;
-      color:#fff;
-      padding:40px 0;
-      text-align:center;
-    }
-
-    .footer p{
-      color:#ccc;
-      margin-top:15px;
-    }
-
-    @media(max-width:1100px){
-      .product-grid,
-      .service-grid{
-        grid-template-columns:repeat(2,1fr);
-      }
-
-      .review-grid{
-        grid-template-columns:1fr;
-      }
-    }
-
-    @media(max-width:900px){
-      .hero-flex,
-      .about-flex,
-      .contact-flex,
-      .stats-grid{
-        grid-template-columns:1fr;
-      }
-
-      .hero-text h1{
-        font-size:45px;
-      }
-
-      .banner h2{
-        font-size:40px;
-      }
-
-      .menu{
-        position:absolute;
-        top:100%;
-        left:-100%;
-        width:100%;
-        background:#fff;
-        flex-direction:column;
-        padding:30px;
-        transition:0.5s;
-        box-shadow:0 10px 20px rgba(0,0,0,0.08);
-      }
-
-      .menu.active{
-        left:0;
-      }
-
-      .hamburger{
-        display:flex;
-      }
-    }
-
-    @media(max-width:600px){
-      .product-grid,
-      .service-grid{
-        grid-template-columns:1fr;
-      }
-
-      .hero-text h1{
-        font-size:35px;
-      }
-
-      .section-title h2,
-      .about-text h2,
-      .contact-info h2{
-        font-size:32px;
-      }
-    }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header */
+header {
+    background: #000;
+    color: #fff;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.cta-btn {
+    background: #25D366;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+/* Hero Section */
+.hero {
+    background:  url('abimages/masfa44.jpeg'); /* Background image link kar sakte hain */
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+/* Products */
+.products {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.products h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    margin-bottom: 10px;
+}
+
+.features {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.buy-now {
+    display: block;
+    background: #000;
+    color: #fff;
+    padding: 12px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.buy-now:hover {
+    background: #333;
+}
+
+/* Footer */
+footer {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 50px;
+}
+/* --- Order Form Popup Styles --- */
+
+/* Popup ka pichla parda (Poori screen ko thora dark karne ke liye) */
+.modal-bg {
+    display: none; /* Shuru mein hidden rahega */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Form ka main dabba (Box) */
+.modal-box {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 420px;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* X (Close) Button */
+.close-popup {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+}
+
+.modal-box h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 22px;
+    text-align: center;
+}
+
+/* Form Layout aur Inputs */
+.modal-box form {
+    display: block;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #444;
+    text-align: left;
+}
+
+.input-group input, .input-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+.input-group textarea {
+    height: 80px;
+    resize: none;
+}
+
+/* Naye Buy Now aur Submit Buttons ke liye custom green aur black combinations */
+button.buy-now {
+    background-color: #111;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s ease;
+}
+
+button.buy-now:hover {
+    background-color: #333;
+}
+
+.submit-order-btn {
+    background-color: #28a745; /* Green Color aapke header se match karega */
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.2s;
+}
+
+.submit-order-btn:hover {
+    background-color: #218838;
+}
